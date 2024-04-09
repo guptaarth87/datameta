@@ -4,6 +4,7 @@ import axios from 'axios';
 import './CheckForeignKey.css';
 import Hero from './Hero';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const CheckForeignKey = () => {
     const [csvFiles, setCsvFiles] = useState([]);
@@ -186,6 +187,7 @@ const CheckForeignKey = () => {
             </div>
             </div>
         </div>
+        <Footer/>
         </>
     );
 };

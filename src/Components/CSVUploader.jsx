@@ -3,6 +3,7 @@ import CSVReader from 'react-csv-reader';
 import API_URL from '../_helper';
 import axios from 'axios';
 import './CheckForeignKey.css';
+import Footer from './Footer';
 
 const CSVUploader = () => {
     const [csvData, setCSVData] = useState([]);
@@ -157,6 +158,7 @@ const CSVUploader = () => {
                 </table>
             </div>
             </div>
+            <Footer/>
         </div>
     );
 };
