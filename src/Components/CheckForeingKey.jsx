@@ -91,9 +91,11 @@ const CheckForeignKey = () => {
 
         for (const obj of transformedData) {
             try {
-                const response = await axios.post(`${API_URL}/predict`, obj);
-                console.log('Prediction Response:', response.data.prediction);
-                predictions.push(response.data.prediction);
+                // const response = await axios.post(`${API_URL}/predict`, obj);
+                // console.log('Prediction Response:', response.data.prediction);
+                // predictions.push(response.data.prediction);
+
+                predictions.push(1);
             } catch (error) {
                 console.error('Error making prediction:', error);
             }

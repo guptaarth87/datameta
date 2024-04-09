@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import CSVReader from 'react-csv-reader';
 import API_URL from '../_helper';
 import axios from 'axios';
+import './CheckForeignKey.css';
+
 const CSVUploader = () => {
     const [csvData, setCSVData] = useState([]);
     const [columns, setColumns] = useState([]);
@@ -50,9 +52,13 @@ const CSVUploader = () => {
             for (const item of generatedData) {
                 try {
                     // Make a POST request for each object in the array
-                    const response = await axios.post(`${API_URL}/predict`, item);
-                    console.log('Prediction Response:', response.data);
-                    Prediction.push(response.data.prediction)
+                    // const response = await axios.post(`${API_URL}/predict`, item);
+                    // uncomment on real api
+                    // console.log('Prediction Response:', response.data);
+                    // Prediction.push(response.data.prediction)
+                    
+                    Prediction.push(1)
+
                     // Process the response here if needed
                     const samplePredictions = Prediction; // Sample predictions
 
@@ -81,6 +87,7 @@ const CSVUploader = () => {
             />
             <hr />
             <h3>Data</h3>
+            <div className="table-container">
             <div className="table-responsive">
                 <table className="table table-bordered">
                     <thead>
@@ -100,6 +107,7 @@ const CSVUploader = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
             </div>
             <hr />
             <button className="btn btn-primary" onClick={preprocessData}>Preprocess Data</button>
@@ -129,6 +137,7 @@ const CSVUploader = () => {
             <button className="btn btn-primary" onClick={handlePrediction}>Make Prediction</button>
 
             <h3 className="mt-5">Prediction Results</h3>
+            <div className="table-container">
             <div className="table-responsive">
                 <table className="table table-bordered">
                     <thead>
@@ -146,6 +155,7 @@ const CSVUploader = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     );
