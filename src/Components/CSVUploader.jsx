@@ -74,13 +74,13 @@ const CSVUploader = () => {
 
     return (
         <div className="container mt-5">
-            <h2>Upload CSV File</h2>
+            <h2>Upload  File</h2>
             <CSVReader
                 onFileLoaded={handleCSVUpload}
                 parserOptions={{ header: true, dynamicTyping: true, skipEmptyLines: true }}
             />
             <hr />
-            <h3>CSV Data</h3>
+            <h3>Data</h3>
             <div className="table-responsive">
                 <table className="table table-bordered">
                     <thead>

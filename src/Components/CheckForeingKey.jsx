@@ -111,7 +111,7 @@ const CheckForeignKey = () => {
         <div className="container mt-5">
             <h2>Check Foreign Key</h2>
             <div>
-                <label htmlFor="csvFiles">Upload CSV Files:</label>
+                <label htmlFor="csvFiles">Upload Files:</label>
                 <input type="file" id="csvFiles" accept=".csv" multiple onChange={handleFileUpload} />
             </div>
             <hr />

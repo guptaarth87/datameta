@@ -12,10 +12,10 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/home">Check_PK</Link>
+                                <Link className="nav-link" to="/home">Primary key prediction</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/checkforeinkey">Check_FK</Link>
+                                <Link className="nav-link" to="/checkforeinkey">Foreign key prediction</Link>
                             </li>
                         </ul>
                     </div>
