@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import API_URL from '../_helper';
 import axios from 'axios';
 import './CheckForeignKey.css';
+import Hero from './Hero';
+import Navbar from './Navbar';
 
 const CheckForeignKey = () => {
     const [csvFiles, setCsvFiles] = useState([]);
@@ -98,8 +100,11 @@ const CheckForeignKey = () => {
         }
 
         const newResponseTable = transformedData.map((obj, index) => ({
+            'Table Name': obj['Table Name'],
             'Column Name': obj['Column Name'],
+            'Reference Table Name': obj['Reference Table Name'],
             'Reference Column Name': obj['Reference Column Name'],
+            
             'Is ForeignKey': predictions[index] === 1 ? 'Yes' : 'No'
         }));
 
@@ -108,7 +113,11 @@ const CheckForeignKey = () => {
     
     
     return (
+        <>
+        <Navbar/>
+    
         <div className="container mt-5">
+            <Hero/>
             <h2>Check Foreign Key</h2>
             <div>
                 <label htmlFor="csvFiles">Upload Files:</label>
@@ -153,7 +162,9 @@ const CheckForeignKey = () => {
                 <table className="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Table Name</th>
                             <th>Column Name</th>
+                            <th>Reference Table Name</th>
                             <th>Reference Column Name</th>
                             <th>Is ForeignKey</th>
                         </tr>
@@ -161,7 +172,9 @@ const CheckForeignKey = () => {
                     <tbody>
                         {responseTable.map((row, rowIndex) => (
                             <tr key={rowIndex}>
+                                <td>{row['Table Name']}</td>
                                 <td>{row['Column Name']}</td>
+                                <td>{row['Reference Table Name']}</td>
                                 <td>{row['Reference Column Name']}</td>
                                 <td>{row['Is ForeignKey']}</td>
                             </tr>
@@ -171,6 +184,7 @@ const CheckForeignKey = () => {
             </div>
             </div>
         </div>
+        </>
     );
 };
 

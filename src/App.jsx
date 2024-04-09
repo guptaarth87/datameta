@@ -13,8 +13,7 @@ function App() {
 
   return (
     <>
-    <Navbar/>
-    <h2 className='text-center'>Power Datamate</h2>
+   
    
    <Routes>
   

@@ -2,3 +2,23 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
  
 }
+.animated{
+  animation:up-down   2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform : translateY(12px);
+  }
+  100% {
+    transform :translateY(-12px);
+  }
+}
+@keyframes up-down {
+  0% {
+    transform : translateY(12px);
+  }
+  100% {
+    transform :translateY(-12px);
+  }
+}
